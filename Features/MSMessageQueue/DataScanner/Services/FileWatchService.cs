@@ -12,9 +12,9 @@ namespace DataScanner.Services
 
     private List<CustomFolderSettings> _lstCustomFoldersSettings = new List<CustomFolderSettings>();
     private List<FileSystemWatcher> _lstFileSystemWatcher = new List<FileSystemWatcher>();
-    private bool _isConfigDataLoaded = false;
+    private bool _isInitialized = false;
 
-    public event EventHandler<FileDetectedEventArgs> FileDetected;
+    public event EventHandler<FileDetectedEventArgs> FileDetected = null!;
 
     public FileWatchService(ILogger<FileWatchService> logger, IConfiguration? configuration=null)
     {
@@ -50,7 +50,6 @@ namespace DataScanner.Services
       {
         _logger.LogInformation("Loading configuration ....");
         _config.GetSection("ListCustomFolderSettings").Bind(_lstCustomFoldersSettings);
-        if (_lstCustomFoldersSettings.Count > 0) _isConfigDataLoaded = true;
       }
       catch (Exception ex)
       {
@@ -58,15 +57,8 @@ namespace DataScanner.Services
       }
     }
 
-    public void StartFileWatcher()
+    private void InitializeFileWatchers()
     {
-      _logger.LogInformation("Starting file watcher ....");
-      while (!_isConfigDataLoaded)
-      {
-        _logger.LogInformation("Please provide configurations ...");
-        LoadConfigurations();
-        Thread.Sleep(1000);
-      }
 
       foreach (CustomFolderSettings customFolder in _lstCustomFoldersSettings)
       {
@@ -93,6 +85,21 @@ namespace DataScanner.Services
         catch (Exception ex)
         {
           _logger.LogError(ex, $"Error setting up FileSystemWatcher for folder: {customFolder.FolderPath}");
+        }
+      }
+    }
+  
+    public void StartFileWatcher()
+    {
+      lock(_lock)
+      {
+        // Used the _isInitialized flag to ensure StartFileWatcher() logic runs only once
+        if (!_isInitialized)
+        {
+          _logger.LogInformation("Starting file watcher ...");
+          LoadConfigurations();
+          InitializeFileWatchers();
+          _isInitialized = true;
         }
       }
     }
