@@ -19,7 +19,7 @@ namespace ExecutePowerShellConsole
     /// <param name="type"></param>
     public static void AddMessage(string message, LoggerMessageType type = LoggerMessageType.INFO)
     {
-      lsLogContainer.Add($"{type.ToString()}: {DateTime.UtcNow.ToString()}: {message}");
+      lsLogContainer.Add($"[{type.ToString()}: {DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff")}]: {message}");
     }
 
     /// <summary>
