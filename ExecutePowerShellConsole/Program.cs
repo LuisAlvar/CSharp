@@ -1,4 +1,9 @@
-﻿using ExecutePowerShellConsole;
+﻿/*
+ * .\ExecutePowerShellConsole.exe "/Commit" "/1"
+ * 
+ */
+
+using ExecutePowerShellConsole;
 using ExecutePowerShellConsole.IIS;
 
 try
