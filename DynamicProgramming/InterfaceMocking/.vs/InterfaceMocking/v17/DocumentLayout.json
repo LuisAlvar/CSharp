@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|c:\\workstation\\csharp\\dynamicprogramming\\interfacemocking\\propertyinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|solutionrelative:propertyinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|c:\\workstation\\csharp\\dynamicprogramming\\interfacemocking\\imyinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|solutionrelative:imyinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|c:\\workstation\\csharp\\dynamicprogramming\\interfacemocking\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|c:\\workstation\\csharp\\dynamicprogramming\\interfacemocking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B0491-31BA-4B76-8A08-BD803FD91004}|InterfaceMocking.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 316,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PropertyInterceptor.cs",
+              "DocumentMoniker": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\PropertyInterceptor.cs",
+              "RelativeDocumentMoniker": "PropertyInterceptor.cs",
+              "ToolTip": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\PropertyInterceptor.cs",
+              "RelativeToolTip": "PropertyInterceptor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T07:45:16.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-01-06T07:10:56.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T07:08:46.827Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 90,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IMyInterface.cs",
+              "DocumentMoniker": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\IMyInterface.cs",
+              "RelativeDocumentMoniker": "IMyInterface.cs",
+              "ToolTip": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\IMyInterface.cs",
+              "RelativeToolTip": "IMyInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T07:12:49.385Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

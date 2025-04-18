@@ -1,0 +1,1 @@
+Guide: https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal

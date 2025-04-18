@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "roCfhcjLkIE=",
+  "success": true,
+  "projectFilePath": "C:\\Workstation\\CSharp\\DynamicProgramming\\InterfaceMocking\\InterfaceMocking.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alvar\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\alvar\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

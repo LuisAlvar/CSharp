@@ -57,6 +57,10 @@ try
 }
 catch (Exception ex)
 {
-  RealTimeThreadManager.Stop();
+  
   Console.WriteLine($"Exception occurred: {ex.Message}");
+}
+finally
+{
+  RealTimeThreadManager.Stop();
 }

@@ -18,9 +18,7 @@ public class RealTimeThreadManager
     var task1 = Task1Async(token);
     var task2 = Task2Async(token);
 
-    Console.WriteLine("Waiting...for the tasks");
     await Task.WhenAll(task1, task2);
-    Console.WriteLine("Done waiting for the tasks");
 
     // Proceed with the synchronous task after both tasks complete
     ExecuteSynchronousTask();
