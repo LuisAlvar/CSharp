@@ -1,0 +1,7 @@
+svcutil "http://localhost:8987/CalculatorServiceSvc" 
+/out:"C:\Workstation\CSharp\WindowsCommunicationFoundation\CalculatorWindowsServiceClient\CalculatorServiceProxy\CalculatorServiceProxy.cs" 
+/config:"C:\Workstation\CSharp\WindowsCommunicationFoundation\CalculatorWindowsServiceClient\CalculatorServiceProxy\App.config" 
+/async /n:*,CalculatorService.Services
+
+
+svcutil "http://localhost:8987/CalculatorServiceSvc" /out:"C:\Workstation\CSharp\WindowsCommunicationFoundation\CalculatorWindowsServiceClient\CalculatorServiceProxy\CalculatorServiceProxy.cs" /config:"C:\Workstation\CSharp\WindowsCommunicationFoundation\CalculatorWindowsServiceClient\CalculatorServiceProxy\App.config" /async /n:*,CalculatorService.Services
