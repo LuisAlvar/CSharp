@@ -8,3 +8,8 @@ Console.WriteLine($"These are the complex numbers: {string.Join(",", lstComplext
 List<int> lstNums = ComplexNumberParser.Transform(lstComplextNums);
 Console.WriteLine($"These real numbers within these complex numbers: {string.Join(",", lstNums)}");
 
+string sum = new ComplexNumberCalculator().Sum(lstNums);
+Console.WriteLine($"Sum Result: {sum}");
+
+string product = new ComplexNumberCalculator().Multiply(lstNums);
+Console.WriteLine($"Sum Result: {product}");

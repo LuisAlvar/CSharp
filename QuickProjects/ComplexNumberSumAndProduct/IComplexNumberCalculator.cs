@@ -8,7 +8,7 @@ namespace ComplexNumberSumAndProduct
 {
   public interface IComplexNumberCalculator
   {
-    public string Sum(string operandA, string operandB);
+    public string Sum(List<int> ComplexNumberComponents);
 
     public string Multiply(string operandA, string operandB);
   }
