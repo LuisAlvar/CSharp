@@ -12,4 +12,7 @@ string sum = new ComplexNumberCalculator().Sum(lstNums);
 Console.WriteLine($"Sum Result: {sum}");
 
 string product = new ComplexNumberCalculator().Multiply(lstNums);
-Console.WriteLine($"Sum Result: {product}");
+Console.WriteLine($"Product Result: {product}");
+
+sum = new ComplexNumberCalculator().Sum(lstComplextNums[0], lstComplextNums[1]);
+Console.WriteLine($"Sum Result: {sum}");

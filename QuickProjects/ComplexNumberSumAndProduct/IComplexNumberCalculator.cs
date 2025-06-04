@@ -10,6 +10,8 @@ namespace ComplexNumberSumAndProduct
   {
     public string Sum(List<int> ComplexNumberComponents);
 
-    public string Multiply(string operandA, string operandB);
+    public string Multiply(List<int> ComplexNumberComponents);
+
+    public string Sum(string operandA, string operandB);
   }
 }
