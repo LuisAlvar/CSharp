@@ -16,3 +16,6 @@ Console.WriteLine($"Product Result: {product}");
 
 sum = new ComplexNumberCalculator().Sum(lstComplextNums[0], lstComplextNums[1]);
 Console.WriteLine($"Sum Result: {sum}");
+
+product = new ComplexNumberCalculator().Multiply(lstComplextNums[0], lstComplextNums[1]);
+Console.WriteLine($"Product Result: {product}");

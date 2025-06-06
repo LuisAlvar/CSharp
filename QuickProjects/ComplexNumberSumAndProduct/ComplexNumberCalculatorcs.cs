@@ -84,4 +84,83 @@ public class ComplexNumberCalculator : IComplexNumberCalculator
 
     return (result.EndsWith("1")) ? result.Replace("1", "i") : result += "i";
   }
+
+  public string Multiply(string operandA, string operandB)
+  {
+    string result = string.Empty;
+    string opParser1 = string.Empty;
+    int op1 = 0;
+    int indexOnOp1 = 0;
+    string opParser2 = string.Empty;
+    int op2 = 0;
+    int indexOnOp2 = 0;
+
+    operandA = Regex.Replace(operandA, @"(?<=[^\w]|[-+])i", "1");
+    operandB = Regex.Replace(operandB, @"(?<=[^\w]|[-+])i", "1");
+    operandA = Regex.Replace(operandA, @"(?<=\d)i", "");
+    operandB = Regex.Replace(operandB, @"(?<=\d)i", "");
+
+    Console.WriteLine(operandA);
+    Console.WriteLine(operandB);
+
+    List<int> lstOperandA = new List<int>();
+    List<int> lstOperandB = new List<int>();
+
+    while (indexOnOp2 < operandB.Length)
+    {
+      if (!int.TryParse(opParser1, out op1)) opParser1 += operandA[indexOnOp1++];
+      if (!int.TryParse(opParser2, out op2)) opParser2 += operandB[indexOnOp2++];
+      if (int.TryParse(opParser1, out op1) && int.TryParse(opParser2, out op2))
+      {
+        if (lstOperandA.Count == 0)
+        {
+          lstOperandA.Add(op1);
+          lstOperandB.Add(op2);
+          opParser1 = string.Empty;
+          opParser2 = string.Empty;
+        }
+        else
+        {
+          lstOperandA.Add(op1);
+          lstOperandB.Add(op2);
+        }
+      }
+    }
+
+    Console.WriteLine($"First complex numbers values: {string.Join(",", lstOperandA)}");
+    Console.WriteLine($"Second complex numbers values: {string.Join(",", lstOperandB)}");
+
+    List<int> finalCompute = new List<int>();
+
+    for (int i = 0; i < lstOperandB.Count; ++i)
+    {
+      for (int j = 0; j < lstOperandA.Count; ++j)
+      {
+        finalCompute.Add(lstOperandB[i] * lstOperandA[j]);
+      }
+    }
+
+    finalCompute[finalCompute.Count - 1] = finalCompute[finalCompute.Count - 1] * -1;
+    finalCompute.Insert(finalCompute.Count - 2, finalCompute[finalCompute.Count - 1]);
+    finalCompute.RemoveAt(finalCompute.Count - 1);
+
+    Console.WriteLine($"List of value from distribution: {string.Join("," , finalCompute)}");
+
+    for (int i = 0; i < finalCompute.Count/2; ++i)
+    {
+      int compute = (finalCompute[i] + finalCompute[(i + 2)]);
+      if (string.IsNullOrEmpty(result))
+      {
+        result += compute.ToString();
+      }
+      else
+      {
+        if (compute > 0) result += "+";
+        result += compute.ToString();
+      }
+    }
+    result += "i";
+    return result;
+  }
+
 }
