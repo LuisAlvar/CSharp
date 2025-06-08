@@ -69,6 +69,8 @@ public class ComplexNumberCalculator : IComplexNumberCalculator
     Console.WriteLine(operandA);
     Console.WriteLine(operandB);
 
+    int validValue = 0;
+
     while (indexOnOp2 < operandB.Length)
     {
       if (!int.TryParse(opParser1, out op1)) opParser1 += operandA[indexOnOp1++];
@@ -76,13 +78,17 @@ public class ComplexNumberCalculator : IComplexNumberCalculator
       if (int.TryParse(opParser1, out op1) && int.TryParse(opParser2, out op2))
       {
         int sum = op1 + op2;
-        result += sum.ToString();
-        opParser1 = string.Empty;
-        opParser2 = string.Empty;
+        if (sum != 0)
+        {
+          result += sum.ToString();
+          if (validValue == 2) result += "i";
+          opParser1 = string.Empty;
+          opParser2 = string.Empty;
+          ++validValue;
+        }
       }
     }
-
-    return (result.EndsWith("1")) ? result.Replace("1", "i") : result += "i";
+    return result;
   }
 
   public string Multiply(string operandA, string operandB)
