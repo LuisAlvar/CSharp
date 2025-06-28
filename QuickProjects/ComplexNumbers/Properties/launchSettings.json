@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ComplexNumbers": {
+      "commandName": "Project",
+      "commandLineArgs": "--oprand -3+i --oprand 2-4i"
+    }
+  }
+}
