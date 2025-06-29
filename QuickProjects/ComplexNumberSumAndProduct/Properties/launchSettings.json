@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "ComplexNumberSumAndProduct": {
-      "commandName": "Project",
-      "commandLineArgs": "--oprand -3-i --oprand 1-2i"
-    }
-  }
-}
