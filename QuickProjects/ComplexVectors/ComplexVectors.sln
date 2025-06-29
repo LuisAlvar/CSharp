@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexVectors", "ComplexVectors.csproj", "{16397FD3-A0EE-4CD7-81B9-B25EF2EB45C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16397FD3-A0EE-4CD7-81B9-B25EF2EB45C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16397FD3-A0EE-4CD7-81B9-B25EF2EB45C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16397FD3-A0EE-4CD7-81B9-B25EF2EB45C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16397FD3-A0EE-4CD7-81B9-B25EF2EB45C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D85C96D3-5673-40C5-AE3B-7064CE1ED372}
+	EndGlobalSection
+EndGlobal
