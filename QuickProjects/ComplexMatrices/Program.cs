@@ -1,35 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using ComplexMatrices.Entity;
 using ComplexVectors.Entity;
 
-ComplexVector V = new ComplexVector();
-V.Add(new ComplexNumber(6, -4));
-V.Add(new ComplexNumber(7,3));
-V.Add(new ComplexNumber(4.2, -8.1));
-V.Add(new ComplexNumber(0,-3));
+ComplexNumber C1 = new ComplexNumber(1,-1);
+ComplexNumber C2 = new ComplexNumber(2, 2);
 
-Console.WriteLine(V.ToString());
+ComplexNumber C3 = new ComplexNumber(3, 0);
+ComplexNumber C4 = new ComplexNumber(4, 1);
 
 
-ComplexVector W = new ComplexVector();
-W.Add(new ComplexNumber(16, 2.3));
-W.Add(new ComplexNumber(0, -7));
-W.Add(new ComplexNumber(6, 0));
-W.Add(new ComplexNumber(0, -4));
+//Console.WriteLine(C1.ToString());
+//Console.WriteLine(C2.ToString());
+//Console.WriteLine(C3.ToString());
+//Console.WriteLine(C4.ToString());
 
-Console.WriteLine(W.ToString());
-
-ComplexVector result = V +  W;
-
-Console.WriteLine(result.ToString());
-Console.WriteLine(V.Inverse().ToString());
-
-
-ComplexNumber C1 = new ComplexNumber(3,2);
-V = new ComplexVector();
-V.Add(new ComplexNumber(6,3));
-V.Add(new ComplexNumber(0,0));
-V.Add(new ComplexNumber(5,1));
-V.Add(new ComplexNumber(4, 0));
-
-result = C1 * V;
-Console.WriteLine(result.ToString());
+ComplexMatrix matrices = new ComplexMatrix(2, 2);
+matrices.Add(C1);
+matrices.Add(C3);
+matrices.Add(C2);
+matrices.Add(C4);
+Console.WriteLine(matrices.ToString());

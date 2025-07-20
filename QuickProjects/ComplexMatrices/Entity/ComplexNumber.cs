@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -101,14 +102,32 @@ public class ComplexNumber
 
   public override string ToString()
   {
-    string _ = $"({real},{imaginary})";
-    if (imaginary < 0)
+    string _ = string.Empty;
+
+    if (real != 0)
     {
-      _ = _ + $" = {real}{imaginary}i";
+      _ = _ + $"{real}";
+    }
+
+    if (imaginary == -1)
+    {
+      _ = _ + $"-i";
+
+    }
+    else if (imaginary == 1)
+    {
+      _ = _ + $"+i";
     }
     else
     {
-      _ = _ + $" = {real}+{imaginary}i";
+      if (imaginary < 0 && imaginary != 0)
+      {
+        _ = _ + $"{imaginary}i";
+      }
+      else if (imaginary > 0 && imaginary != 0)
+      {
+        _ = _ + $"+{imaginary}i";
+      }
     }
     return _;
   }
