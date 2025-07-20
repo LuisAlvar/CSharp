@@ -2,21 +2,19 @@
 using ComplexMatrices.Entity;
 using ComplexVectors.Entity;
 
-ComplexNumber C1 = new ComplexNumber(1,-1);
-ComplexNumber C2 = new ComplexNumber(2, 2);
-
-ComplexNumber C3 = new ComplexNumber(3, 0);
-ComplexNumber C4 = new ComplexNumber(4, 1);
-
-
-//Console.WriteLine(C1.ToString());
-//Console.WriteLine(C2.ToString());
-//Console.WriteLine(C3.ToString());
-//Console.WriteLine(C4.ToString());
-
 ComplexMatrix matrices = new ComplexMatrix(2, 2);
-matrices.Add(C1);
-matrices.Add(C3);
-matrices.Add(C2);
-matrices.Add(C4);
+matrices.Add(new ComplexNumber(1, -1));
+matrices.Add(new ComplexNumber(3, 0));
+matrices.Add(new ComplexNumber(2, 2));
+matrices.Add(new ComplexNumber(4, 1));
 Console.WriteLine(matrices.ToString());
+
+ComplexNumber c1 = new ComplexNumber(0, 2);
+ComplexNumber c2 = new ComplexNumber(1, 2);
+
+ComplexMatrix result = c1 * (c2 * matrices);
+Console.WriteLine(result.ToString());
+
+
+ComplexMatrix result2 = c1 * matrices + c2 * matrices;
+Console.WriteLine(result2.ToString());

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ComplexMatrices.Entity;
 
-
 public class ComplexMatrix
 {
   List<ComplexNumber> DataStore { get; set; } = new List<ComplexNumber>();
@@ -21,15 +20,31 @@ public class ComplexMatrix
     DataStore = new List<ComplexNumber>(rows * colums);
     for (int i = 0; i < DataStore.Count; i++)
     {
-      DataStore[i]= new ComplexNumber(0,0);
+      DataStore[i] = new ComplexNumber(0,0);
     }
   }
 
   public void Add(ComplexNumber number) => DataStore.Add(number); 
 
-  public static ComplexMatrix operator *(double scalar, ComplexMatrix matrix)
+  public static ComplexMatrix operator *(ComplexNumber scalar, ComplexMatrix matrix)
   {
-    throw new NotImplementedException();
+    ComplexMatrix result = new ComplexMatrix(matrix._rows, matrix._columns);
+    for (int i = 0; i < matrix.DataStore.Count; i++)
+    {
+      result.Add(scalar * matrix.DataStore[i]);
+    }
+    return result;
+  }
+
+  public static ComplexMatrix operator +(ComplexMatrix a, ComplexMatrix b)
+  {
+    if (a._rows != b._rows || a._columns != b._columns) throw new ArgumentException("Both matrices need to be mxn size.");
+    ComplexMatrix result = new ComplexMatrix(a._rows, a._columns);
+    for (int i = 0; i < b.DataStore.Count; i++)
+    {
+      result.Add(a.DataStore[i] + b.DataStore[i]);
+    }
+    return result;
   }
 
   public override string ToString()
@@ -75,7 +90,5 @@ public class ComplexMatrix
     }
     return _;
   }
-
-
 }
 

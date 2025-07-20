@@ -124,7 +124,11 @@ public class ComplexNumber
       {
         _ = _ + $"{imaginary}i";
       }
-      else if (imaginary > 0 && imaginary != 0)
+      else if (imaginary > 0 && imaginary != 0 && real == 0)
+      {
+        _ = _ + $"{imaginary}i";
+      }
+      else if (imaginary > 0 && imaginary != 0 && real != 0)
       {
         _ = _ + $"+{imaginary}i";
       }
