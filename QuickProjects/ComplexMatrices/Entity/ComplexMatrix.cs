@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.XPath;
 
 namespace ComplexMatrices.Entity;
 
@@ -25,6 +26,58 @@ public class ComplexMatrix
   }
 
   public void Add(ComplexNumber number) => DataStore.Add(number); 
+  
+  /// <summary>
+  /// Convert rows into columns A[row, column] => A^T[column, row]
+  /// <br/>
+  /// Time Complexity is still O(n/_columns) ~ O(n)
+  /// </summary>
+  /// <returns></returns>
+  public ComplexMatrix Transpose()
+  {
+    ComplexMatrix result = new ComplexMatrix(_columns, _rows);
+    for (int k = 0; k < _columns; ++k)
+    {
+      result.Add(DataStore[k]);
+      for (int j = 1; j < _rows; j++)
+      {
+        result.Add(DataStore[_rows * j + k]);
+      }
+    }
+    return result;
+  }
+
+  /// <summary>
+  /// Within each element of a complex matrix return its conjugation as a new matrix
+  /// </summary>
+  /// <returns></returns>
+  public ComplexMatrix Conjugate()
+  {
+    ComplexMatrix result = new ComplexMatrix(_rows, _columns);
+    for (int i = 0; i < DataStore.Count; i++)
+    {
+      result.Add(DataStore[i].Conjugation());
+    }
+    return result;
+  }
+
+  /// <summary>
+  /// Convert rows into columns of a given complex matrix along with its conjugation of each element.
+  /// </summary>
+  /// <returns></returns>
+  public ComplexMatrix Adjoint()
+  {
+    ComplexMatrix result = new ComplexMatrix(_columns, _rows);
+    for (int k = 0; k < _columns; ++k)
+    {
+      result.Add(DataStore[k].Conjugation());
+      for (int j = 1; j < _rows; j++)
+      {
+        result.Add(DataStore[_rows * j + k].Conjugation());
+      }
+    }
+    return result;
+  }
 
   public static ComplexMatrix operator *(ComplexNumber scalar, ComplexMatrix matrix)
   {

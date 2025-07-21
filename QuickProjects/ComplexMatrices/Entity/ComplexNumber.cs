@@ -108,6 +108,10 @@ public class ComplexNumber
     {
       _ = _ + $"{real}";
     }
+    else if (real == 0 && imaginary == 0)
+    {
+      _ = "0";
+    }
 
     if (imaginary == -1)
     {
