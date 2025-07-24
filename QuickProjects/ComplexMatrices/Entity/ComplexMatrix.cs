@@ -100,6 +100,54 @@ public class ComplexMatrix
     return result;
   }
 
+  public static ComplexMatrix operator *(ComplexMatrix left, ComplexMatrix right)
+  {
+    if (left._columns != right._rows) throw new ArgumentException("These matrice can not be multipled together");
+    ComplexMatrix result = new ComplexMatrix(left._rows, right._columns);
+
+    int left_col_index = 0;
+    int left_row_index = 0;
+    int current_left_index = 0;
+    int right_col_index = 0;
+    int right_row_index = 0;
+    int current_right_index = 0;
+
+    ComplexNumber sum = new ComplexNumber(0,0);
+
+    while(left_row_index < left._rows)
+    {
+      left_col_index = 0;
+      right_row_index = 0;
+      sum = new ComplexNumber(0,0);
+
+      while (right_row_index < right._rows)
+      {
+        current_left_index = left._columns * left_row_index + left_col_index;
+        current_right_index = right._columns * right_row_index + right_col_index;
+
+        //Console.WriteLine($"{current_left_index}-{current_right_index}");
+
+        sum += left.DataStore[current_left_index] * right.DataStore[current_right_index];
+
+        ++left_col_index;
+        ++right_row_index;
+      }
+
+      result.Add(sum);
+      if(right_col_index == right._columns - 1)
+      {
+        ++left_row_index;
+        right_col_index = 0;
+      }
+      else
+      {
+        ++right_col_index;
+      }
+    }
+
+    return result;
+  }
+
   public override string ToString()
   {
     int paddding = 2;
