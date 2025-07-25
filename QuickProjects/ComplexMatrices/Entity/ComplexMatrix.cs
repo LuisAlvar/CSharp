@@ -100,6 +100,13 @@ public class ComplexMatrix
     return result;
   }
 
+  /// <summary>
+  /// Matrix multiplication between two proper matrices
+  /// </summary>
+  /// <param name="left"></param>
+  /// <param name="right"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentException"></exception>
   public static ComplexMatrix operator *(ComplexMatrix left, ComplexMatrix right)
   {
     if (left._columns != right._rows) throw new ArgumentException("These matrice can not be multipled together");
@@ -135,6 +142,62 @@ public class ComplexMatrix
 
       result.Add(sum);
       if(right_col_index == right._columns - 1)
+      {
+        ++left_row_index;
+        right_col_index = 0;
+      }
+      else
+      {
+        ++right_col_index;
+      }
+    }
+
+    return result;
+  }
+  
+  /// <summary>
+  /// Complex algebra "Action" between a matrix and vector to yield a new vector 
+  /// </summary>
+  /// <param name="left"></param>
+  /// <param name="right"></param>
+  /// <returns></returns>
+  /// <exception cref="ArgumentException"></exception>
+  public static ComplexVector operator *(ComplexMatrix left, ComplexVector right)
+  {
+    if (left._rows != left._columns) throw new ArgumentException("The matrix must be square");
+    if (left._columns != right.DataStore.Count) throw new ArgumentException("The matrix columns does not match the number of element within the vector");
+    ComplexVector result = new ComplexVector();
+
+    int left_col_index = 0;
+    int left_row_index = 0;
+    int current_left_index = 0;
+    int right_col_index = 0;
+    int right_row_index = 0;
+    int current_right_index = 0;
+
+    ComplexNumber sum = new ComplexNumber(0, 0);
+
+    while (left_row_index < left._rows)
+    {
+      left_col_index = 0;
+      right_row_index = 0;
+      sum = new ComplexNumber(0, 0);
+
+      while (right_row_index < right.DataStore.Count)
+      {
+        current_left_index = left._columns * left_row_index + left_col_index;
+        current_right_index = 1 * right_row_index + right_col_index;
+
+        //Console.WriteLine($"{current_left_index}-{current_right_index}");
+
+        sum += left.DataStore[current_left_index] * right.DataStore[current_right_index];
+
+        ++left_col_index;
+        ++right_row_index;
+      }
+
+      result.Add(sum);
+      if (right_col_index == 0)
       {
         ++left_row_index;
         right_col_index = 0;

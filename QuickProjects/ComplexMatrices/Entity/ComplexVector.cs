@@ -10,7 +10,7 @@ namespace ComplexVectors.Entity;
 public class ComplexVector
 {
 
-  public List<ComplexNumber> DataStore { get; private set; } = new List<ComplexNumber>();
+  public List<ComplexNumber> DataStore { get; private set; }
 
   public ComplexVector() { }
 
@@ -23,8 +23,11 @@ public class ComplexVector
     }
   }
 
-  public void Add(ComplexNumber number) => DataStore.Add(number);
-
+  public void Add(ComplexNumber number)
+  {
+    if (DataStore == null) DataStore = new List<ComplexNumber>();
+    DataStore.Add(number);
+  }
   /// <summary>
   /// Elementwise Addition
   /// </summary>

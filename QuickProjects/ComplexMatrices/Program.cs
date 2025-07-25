@@ -2,7 +2,9 @@
 using ComplexMatrices.Entity;
 using ComplexVectors.Entity;
 
-ComplexMatrix matrices = new ComplexMatrix(2, 2);
+//-----------
+
+//ComplexMatrix matrices = new ComplexMatrix(2, 2);
 //matrices.Add(new ComplexNumber(1, -1));
 //matrices.Add(new ComplexNumber(3, 0));
 //matrices.Add(new ComplexNumber(2, 2));
@@ -17,6 +19,8 @@ ComplexMatrix matrices = new ComplexMatrix(2, 2);
 
 //ComplexMatrix result2 = c1 * matrices + c2 * matrices;
 //Console.WriteLine(result2.ToString());
+
+//-----------
 
 //ComplexMatrix exercise225 = new ComplexMatrix(3, 3);
 //exercise225.Add(new ComplexNumber(6, -3));
@@ -35,26 +39,45 @@ ComplexMatrix matrices = new ComplexMatrix(2, 2);
 //Console.WriteLine("Conjugate: \n" + exercise225.Conjugate().ToString());
 //Console.WriteLine("Adjoint: \n" + exercise225.Adjoint().ToString());
 
+//-----------
 
-ComplexMatrix a = new ComplexMatrix(2, 3);
-a.Add(new ComplexNumber(1,0));
-a.Add(new ComplexNumber(2,0));
-a.Add(new ComplexNumber(3,0));
-a.Add(new ComplexNumber(4,0));
-a.Add(new ComplexNumber(5,0));
-a.Add(new ComplexNumber(6,0));
+ComplexMatrix a = new ComplexMatrix(3, 3);
+a.Add(new ComplexNumber(3, 2));
+a.Add(new ComplexNumber(0, 0));
+a.Add(new ComplexNumber(5, -6));
+a.Add(new ComplexNumber(1, 0));
+a.Add(new ComplexNumber(4, 2));
+a.Add(new ComplexNumber(0, 1));
+a.Add(new ComplexNumber(4, -1));
+a.Add(new ComplexNumber(0, 0));
+a.Add(new ComplexNumber(4, 0));
 Console.WriteLine(a.ToString());
 
-ComplexMatrix b = new ComplexMatrix(3, 2);
-b.Add(new ComplexNumber(7, 0));
-b.Add(new ComplexNumber(8, 0));
-b.Add(new ComplexNumber(9, 0));
-b.Add(new ComplexNumber(10, 0));
-b.Add(new ComplexNumber(11, 0));
-b.Add(new ComplexNumber(12, 0));
+ComplexMatrix b = new ComplexMatrix(3, 3);
+b.Add(new ComplexNumber(5, 0));
+b.Add(new ComplexNumber(2, -1));
+b.Add(new ComplexNumber(6, -4));
+b.Add(new ComplexNumber(0, 0));
+b.Add(new ComplexNumber(4, 5));
+b.Add(new ComplexNumber(2, 0));
+b.Add(new ComplexNumber(7, -4));
+b.Add(new ComplexNumber(2, 7));
+b.Add(new ComplexNumber(0, 0));
 Console.WriteLine(b.ToString());
+
+ComplexVector c = new ComplexVector();
+c.Add(new ComplexNumber(5, 0));
+c.Add(new ComplexNumber(2, -2));
+c.Add(new ComplexNumber(1, 1));
+
 
 Console.WriteLine("\n\n");
 
 ComplexMatrix result = a * b;
-Console.WriteLine(result.ToString());
+Console.WriteLine("A * B = \n" + result.ToString());
+
+ComplexMatrix verify = b * a;
+Console.WriteLine("B * A = \n" + verify.ToString());
+
+ComplexVector complexVector = b * c;
+Console.WriteLine("B * c = \n" + complexVector.ToString());
